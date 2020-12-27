@@ -1,5 +1,8 @@
 from .models import ExtraInfo
 from django.forms import ModelForm
+from django.utils.translation import gettext_lazy as _
+import logging
+
 
 class ExtraInfoForm(ModelForm):
     """
@@ -7,11 +10,10 @@ class ExtraInfoForm(ModelForm):
     """
     def __init__(self, *args, **kwargs):
         super(ExtraInfoForm, self).__init__(*args, **kwargs)
-        self.fields['favorite_movie'].error_messages = {
-            "required": u"Please tell us your favorite movie.",
-            "invalid": u"We're pretty sure you made that movie up.",
-        }
+        self.fields['phone_number'].required = True
 
     class Meta(object):
         model = ExtraInfo
-        fields = ('favorite_editor', 'favorite_movie')
+        fields = ('phone_number',)
+        labels = {'phone_number': _("Phone number"),}
+        help_text = {'phone_number': _("Please enter your phone number"),}
