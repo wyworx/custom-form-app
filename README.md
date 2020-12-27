@@ -49,3 +49,5 @@ Than
 `./manage.py lms makemigrations `
 
 `./manage.py lms migrate`
+
+![](src/custom_reg.gif)
