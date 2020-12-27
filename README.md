@@ -1,7 +1,51 @@
-# To Use:
+## Installation on tutor:
 
-1. Install with `pip install -e .` within this folder within the edx platform virtual environment.
-2. Add "custom_reg_form" to the "ADDL_INSTALLED_APPS" array in `lms.env.json` (you may have to create it if it doesn't exist.)
-3. Set "REGISTRATION_EXTENSION_FORM" to "custom_reg_form.forms.ExtraInfoForm" in `lms.env.json`.
-4. Run migrations.
-5. Start/restart the LMS.
+### app installation:
+
+`cd .local/share/tutor/env/build/openedx/requirements   `
+
+`git clone -b solo https://github.com/murat-polat/custom-form-app `
+
+`echo "-e ./custom-form-app" >>  private.txt `
+
+`pip3 install -e custom-form-app `
+
+
+### plugin activation:
+
+`tutor plugins printroot  `
+
+`mkdir "$(tutor plugins printroot)" `
+
+`cd "$(tutor plugins printroot)" `
+
+`nano custom_form_plugin.yml ` Then copy all cods from custom_form_plugin.yml and save
+
+`tutor plugins list `
+
+`tutor plugins enable custom_form_plugin `
+
+`tutor config save `
+
+`tutor images build openedx  `
+
+`tutor local quickstart `
+
+### Debug:
+
+`tutor local run lms bash `
+
+`./manage.py lms makemigrations custom_reg_form`
+
+`./manage.py lms migrate `
+
+To delete and recreate migrations:
+(This step is important if you changed models !)
+
+`./manage.py lms migrate custom_reg_form zero `
+
+Than
+
+`./manage.py lms makemigrations `
+
+`./manage.py lms migrate`
