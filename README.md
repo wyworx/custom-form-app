@@ -31,7 +31,7 @@
 
 `tutor local quickstart `
 
-### Debug:
+### Debug and development:
 
 `tutor local run lms bash `
 
@@ -46,7 +46,7 @@ To delete and recreate migrations:
 
 Than
 
-`./manage.py lms makemigrations `
+`./manage.py lms makemigrations custom_reg_form `
 
 `./manage.py lms migrate`
 
