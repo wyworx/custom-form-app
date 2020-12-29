@@ -23,7 +23,7 @@
 
 `tutor plugins list `
 
-`tutor plugins enable custom_form_plugin `
+`tutor plugins enable custom_reg_form_plugin `
 
 `tutor config save `
 
