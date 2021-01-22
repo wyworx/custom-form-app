@@ -11,7 +11,7 @@ Please test it before using in production!
 
 `cd .local/share/tutor/env/build/openedx/requirements   `
 
-`git clone -b solo https://github.com/murat-polat/custom-form-app `
+`git clone  https://github.com/murat-polat/custom-form-app `
 
 `echo "-e ./custom-form-app" >>  private.txt `
 
