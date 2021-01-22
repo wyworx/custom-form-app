@@ -1,3 +1,8 @@
+
+This custom registration form, forked from https://github.com/open-craft/custom-form-app ,and modifed for Tutor Open edX. It works with Python3 and Open edX Koa.
+Please test it before using in production!
+
+
 ## Installation on tutor:
 
 ### app installation:
