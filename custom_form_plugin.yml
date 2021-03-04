@@ -1,6 +1,6 @@
 ---
 name: custom_reg_form_plugin
-version: 0.1.0
+version: 0.1.1
 patches:
     lms-env: |
       "ADDL_INSTALLED_APPS": ["custom_reg_form"],
