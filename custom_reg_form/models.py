@@ -11,23 +11,13 @@ class ExtraInfo(models.Model):
     The form that wraps this model is in the forms.py file.
     """
     user = models.OneToOneField(USER_MODEL, null=True,  related_name='user+', on_delete=models.CASCADE)
-    
-    nationality = models.CharField(
-        verbose_name="Nationality",
-        max_length=100,
-    )
-    
-    age = models.CharField(
-        verbose_name="Age",
-        max_length=20,
-    )
 
-    phone_number = models.CharField(
-        verbose_name="Phone Number",
+    referral_code = models.CharField(
+        verbose_name="Referral Code",
         max_length=100,
     )    
     
     
     def __str__(self):
-        result = '{0.user} {0.nationality} {0.age} {0.phone_number}'
+        result = '{0.user} {0.referral_code}'
         return result.format(self)
