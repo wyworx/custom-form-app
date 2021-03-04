@@ -10,13 +10,11 @@ class ExtraInfoForm(ModelForm):
     """
     def __init__(self, *args, **kwargs):
         super(ExtraInfoForm, self).__init__(*args, **kwargs)
-        self.fields['nationality'].required = True
-        self.fields['age'].required = True
-        self.fields['phone_number'].required = True
+        self.fields['referral_code'].required = False
         
 
     class Meta(object):
         model = ExtraInfo
-        fields = ('nationality','age','phone_number',)
-        labels = {'nationality': _("Nationality"),'age': _("Age"),'phone_number': _("Phone number"),}
-        help_text = {'nationality': _("Please enter your Nationality"),'age': _("Please enter your Age"),'phone_number': _("Please enter your phone number"),}
+        fields = ('referral_code',)
+        labels = {'referral_code': _("Referral Code"),}
+        help_text = {'referral_code': _("Please enter the public user name of the person who referred you to our website."),}
