@@ -7,18 +7,18 @@ from io import StringIO
 
 class ExtraInfoAdmin(admin.ModelAdmin):
     actions = ['download_csv'] 
-    list_display = ('user', 'nationality', 'age', 'phone_number',)
-    list_display_links = ('user', 'nationality', 'age', 'phone_number',)
+    list_display = ('user', 'referral_code',)
+    list_display_links = ('user', 'referral_code',)
     list_filter = ('user',)
-    search_fields = ('user', 'nationality', 'age', 'phone_number',)
+    search_fields = ('user', 'referral_code',)
     list_per_page = 25  
     def download_csv(self, request, queryset,*args, **kwargs):
         import csv
         f = open('some.csv', 'w')
         writer = csv.writer(f)
-        writer.writerow(['user', 'nationality', 'age', 'phone_number',])
+        writer.writerow(['user', 'referral_code',])
         for s in queryset:
-            writer.writerow([s.user, s.nationality, s.age, s.phone_number])
+            writer.writerow([s.user, s.referral_code])
         
         f.close()
         f = open('some.csv', 'r')
